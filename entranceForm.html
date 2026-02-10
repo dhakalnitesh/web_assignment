@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Entrance Exam Registration</title>
+</head>
+<link rel="stylesheet" href="entranceForm.css">
+<body>
+
+<h2>Entrance Exam Registration Form</h2>
+
+<form onsubmit="return validateEntrance_nitesh()">
+
+  <label for="fullname_nitesh">Full Name:</label><br>
+  <input type="text" id="fullname_nitesh" required><br><br>
+
+  <label for="dob_nitesh">Date of Birth:</label><br>
+  <input type="date" id="dob_nitesh" required><br><br>
+
+  <label for="age_nitesh">Age:</label><br>
+  <input type="number" id="age_nitesh" required readonly><br><br>
+
+  <label for="phone_nitesh">Phone Number:</label><br>
+  <input type="text" id="phone_nitesh" required><br><br>
+
+  <label for="email_nitesh">Email:</label><br>
+  <input type="email" id="email_nitesh" required><br><br>
+
+  <label>Gender:</label><br>
+  <input type="radio" name="gender_nitesh" value="Male" id="male" required> <label for="male">Male</label>
+  <input type="radio" name="gender_nitesh" value="Female" id="female"> <label for="female">female</label><br><br>
+
+  <label for="stream_nitesh">Exam Stream:</label><br>
+  <select id="stream_nitesh" required >
+    <option value="Select" >Select</option>
+    <option value="Science">Science</option>
+    <option value="Management">Management</option>
+    <option value="Arts">Arts</option>
+  </select><br><br>
+
+  <input type="checkbox" id="agree_nitesh" required>
+  <label for="agree_nitesh">I confirm all details are correct</label><br><br>
+
+  <input type="submit" value="Register">
+</form>
+
+
+</body>
+<script src="entrance.js"></script>
+</html>
