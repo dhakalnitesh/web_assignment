@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SIM Card Registration</title>
+    <link rel="stylesheet" href="simCard.css">
+</head>
+<body>
+
+<div class="container">
+    <h2>SIM Card Registration</h2>
+
+    <form id="simForm">
+
+        <label>Name</label>
+        <input type="text" id="simname_nitesh" required>
+
+        <label>Citizenship No</label>
+        <input type="text" id="citizen_nitesh" required>
+
+        <label>SIM Type</label>
+        <div class="radio-group" >
+            <input type="radio" name="simtype_nitesh" value="Prepaid" required> Prepaid
+            <input type="radio" name="simtype_nitesh" value="Postpaid"> Postpaid
+        </div>
+
+        <label>Date of Birth</label>
+        <input type="date" id="dob_sim_nitesh" required>
+
+        <label>Nationality</label>
+        <select id="nation_nitesh" required>
+            <option value="">Select</option>
+            <option>Nepali</option>
+            <option>Indian</option>
+        </select>
+
+        <div class="checkbox">
+            <input type="checkbox" id="terms_nitesh" required><span><label for="terms_nitesh">Accept Terms & Conditions
+            </label> 
+          </div>
+        <button type="submit">Register</button>
+
+    </form>
+
+    <div id="result_nitesh"></div>
+</div>
+
+<script src="simCard.js"></script>
+</body>
+</html>
