@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Course Enrollment</title>
+    <link rel="stylesheet" href="onlineCourse.css">
+</head>
+<body>
+
+<h2>Course Enrollment</h2>
+
+<form id="courseForm">
+
+    <label for="cname_nitesh">Student Name:</label>
+    <input type="text" id="cname_nitesh">
+    <br><br>
+
+    <label for="cemail_nitesh">Email:</label>
+    <input type="text" id="cemail_nitesh">
+    <br><br>
+
+    <label for="course_nitesh">Course Name:</label>
+    <select id="course_nitesh">
+        <option value="">Select Course</option>
+        <option value="Web">Web</option>
+        <option value="AI">AI</option>
+    </select>
+    <br><br>
+
+    <label>Mode of Study:</label><br>
+    <input type="radio" id="mode_online" name="mode_nitesh" value="Online">
+    <label for="mode_online">Online</label>
+    <input type="radio" id="mode_offline" name="mode_nitesh" value="Offline">
+    <label for="mode_offline">Offline</label>
+    <br><br>
+
+    <label>Previous Experience:</label><br>
+    <input type="radio" id="exp_yes" name="exp_nitesh" value="Yes" onclick="showExp_nitesh(true)">
+    <label for="exp_yes">Yes</label>
+    <input type="radio" id="exp_no" name="exp_nitesh" value="No" onclick="showExp_nitesh(false)">
+    <label for="exp_no">No</label>
+    <br><br>
+
+    <label for="expdetails_nitesh">Experience Details:</label><br>
+    <textarea id="expdetails_nitesh" style="display:none;"></textarea>
+    <br><br>
+
+    <input type="submit" value="Enroll">
+
+</form>
+
+<script src="onlineCourse.js"></script>
+
+</body>
+</html>
