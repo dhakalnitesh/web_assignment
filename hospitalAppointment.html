@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Hospital Appointment</title>
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f4f6f8;
+            padding: 40px;
+        }
+        form {
+            background-color: #ffffff;
+            max-width: 420px;
+            margin: auto;
+            padding: 25px;
+            border-radius: 6px;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        input[type="text"],
+        input[type="number"],
+        input[type="date"],
+        select {
+            width: 95%;
+            padding: 8px 10px;
+            margin-top: 6px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 6px;
+        }
+        input[type="submit"] {
+            width: 100%;
+            background-color: #007bff;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Hospital Appointment</h2>
+
+<form id="hospitalForm">
+
+  <label for="pname_nitesh">Name:</label>
+  <input type="text" id="pname_nitesh"><br><br>
+
+  <label for="page_nitesh">Age:</label>
+  <input type="number" id="page_nitesh"><br><br>
+
+  <label for="pphone_nitesh">Phone:</label>
+  <input type="text" id="pphone_nitesh"><br><br>
+
+  <label for="dept_nitesh">Department:</label>
+  <select id="dept_nitesh">
+    <option value="">Select</option>
+    <option>ENT</option>
+    <option>Cardiology</option>
+  </select><br><br>
+
+  <label for="pdate_nitesh">Date:</label>
+  <input type="date" id="pdate_nitesh"><br><br>
+
+  <label for="time_nitesh">Time:</label>
+  <select id="time_nitesh">
+    <option value="">Select</option>
+    <option>10 AM</option>
+    <option>2 PM</option>
+  </select><br><br>
+
+  <input type="submit" value="Book Appointment">
+</form>
+
+<script>
+document.getElementById("hospitalForm").onsubmit = function() {
+    var name = document.getElementById("pname_nitesh").value;
+    var age = document.getElementById("page_nitesh").value;
+    var phone = document.getElementById("pphone_nitesh").value;
+    var dept = document.getElementById("dept_nitesh").value;
+    var date = document.getElementById("pdate_nitesh").value;
+    var time = document.getElementById("time_nitesh").value;
+
+    if (name == "") {
+        alert("Name is required");
+        return false;
+    }
+    if (!name.match(/^[A-Za-z ]+$/)) {
+        alert("Name must contain letters only");
+        return false;
+    }
+    if (age == "" || age <= 0) {
+        alert("Age must be greater than 0");
+        return false;
+    }
+    if (!phone.match(/^(97|98)[0-9]{8}$/)) {
+        alert("Phone number must be 10 digits starting with 97 or 98");
+        return false;
+    }
+    if (dept == "") {
+        alert("Please select a department");
+        return false;
+    }
+    if (time == "") {
+        alert("Please select a time slot");
+        return false;
+    }
+    if (date == "") {
+        alert("Please select appointment date");
+        return false;
+    }
+    var today = new Date();
+    today.setHours(0,0,0,0);
+    var appointmentDate = new Date(date);
+    if (appointmentDate < today) {
+        alert("Appointment date cannot be in the past");
+        return false;
+    }
+
+    alert("Appointment booked successfully for " + name);
+
+    setTimeout(function(){
+        location.reload();
+    }, 5000);
+
+    return false;
+};
+</script>
+
+</body>
+</html>
